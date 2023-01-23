@@ -42,10 +42,7 @@ export async function controller(data: string, ws: any) {
       ws.send(direction);
       break;
     case 'prnt_scrn':
-      const AAA = await makeScreenshot();
-      console.log(AAA);
-
-      ws.send(AAA);
+      ws.send(await makeScreenshot());
       break;
     default:
       console.log('Unknown command');
